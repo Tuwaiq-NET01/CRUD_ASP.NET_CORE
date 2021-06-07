@@ -1,0 +1,16 @@
+﻿@{
+    var Product = (ProductModel)ViewData["Product"];
+}
+
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Name: @Product.Name</h5>
+        <p class="card-text">Description: @Product.Description</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Id: @Product.Id</li>
+        <li class="list-group-item">Price: @Product.Price</li>
+
+    </ul>
+</div>
