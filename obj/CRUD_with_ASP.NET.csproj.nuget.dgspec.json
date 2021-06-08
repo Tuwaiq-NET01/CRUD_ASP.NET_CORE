@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/CRUD_with_ASP.NET.csproj": {}
+    "/Users/sami/Desktop/CRUD_ASP.NET_CORE/CRUD_with_ASP.NET.csproj": {}
   },
   "projects": {
-    "/Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/CRUD_with_ASP.NET.csproj": {
+    "/Users/sami/Desktop/CRUD_ASP.NET_CORE/CRUD_with_ASP.NET.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/CRUD_with_ASP.NET.csproj",
+        "projectUniqueName": "/Users/sami/Desktop/CRUD_ASP.NET_CORE/CRUD_with_ASP.NET.csproj",
         "projectName": "CRUD_with_ASP.NET",
-        "projectPath": "/Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/CRUD_with_ASP.NET.csproj",
+        "projectPath": "/Users/sami/Desktop/CRUD_ASP.NET_CORE/CRUD_with_ASP.NET.csproj",
         "packagesPath": "/Users/sami/.nuget/packages/",
-        "outputPath": "/Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/obj/",
+        "outputPath": "/Users/sami/Desktop/CRUD_ASP.NET_CORE/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/sami/.config/NuGet/NuGet.Config"

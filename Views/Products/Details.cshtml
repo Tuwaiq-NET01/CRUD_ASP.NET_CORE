@@ -16,9 +16,12 @@
 </div>
 
 
+@*Normal HTML*@
+@*<a href="/products">Back to products</a>*@
 
-@*@Html.ActionLink("Back to Products", "Index", "Products")*@
-<a asp-controller="Products" asp-action="Index">Back to Products</a>
+@*HTML Helper*@
+@*@Html.ActionLink("Back to Products", "Index","Products")*@
 
 
-
+@*Tag Helper*@
+<a asp-controller="Products" asp-action="Index">Back to products</a>

@@ -38,33 +38,27 @@ namespace CRUD_with_ASP.NET.Controllers
 
         }
 
-
-
-        //GET: /products/create
+        //GET - /products/create
         public IActionResult Create()
         {
             return View();
         }
 
-        //it will come from the form when it's submited. 
-        //POST - /products/create
+        //POST - /proudcts/create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id","Name","Description","Price")]ProductModel product)
+        public IActionResult Create([Bind("Id", "Name","Description","Price")]ProductModel product)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //check the state of model
             {
                 _db.Products.Add(product);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return  View(product);
-            
-            
+            return View(product);
         }
 
 
-        //GET - /products/edit/id
+        //GEt - /products/edit/id
         public IActionResult Edit(int? id)
         {
             var Product = _db.Products.ToList().Find(p => p.Id == id);
@@ -76,29 +70,36 @@ namespace CRUD_with_ASP.NET.Controllers
             return View();
         }
 
-
-
         //POST - /products/edit/id
         [HttpPost]
-        public IActionResult Edit(int id, [Bind("Id", "Name", "Description", "Price")] ProductModel product)
+        public IActionResult Edit([Bind("Id","Name", "Description", "Price")] ProductModel prod)
         {
             //var Product = _db.Products.ToList().Find(p => p.Id == id);
-            _db.Products.Update(product);
+            //Product.Name = prod.Name;
+            //Product.Description = prod.Description;
+            //Product.Price = prod.Price;
+
+            //_db.Products.Update(Product);
+            //_db.SaveChanges();
+            _db.Products.Update(prod);
             _db.SaveChanges();
-            return RedirectToAction("Index");  
+
+            return RedirectToAction("Index");
         }
 
-        //POST - /products/delete/id
+        // POST - /products/delete/id
         [HttpPost]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int? id)
         {
             var Product = _db.Products.ToList().FirstOrDefault(p => p.Id == id);
+            if (id == null || Product == null)
+            {
+                return View("_NotFound");
+            }
             _db.Products.Remove(Product);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
 
     }
 }
