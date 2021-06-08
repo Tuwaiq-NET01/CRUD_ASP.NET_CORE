@@ -6219,7 +6219,7 @@
       "outputPath": "/Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/sami/.nuget/NuGet/NuGet.Config"
+        "/Users/sami/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

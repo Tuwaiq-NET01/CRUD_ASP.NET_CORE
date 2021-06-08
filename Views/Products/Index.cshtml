@@ -15,6 +15,8 @@
             <th scope="col">Price</th>
             <th scope="col">Details</th>
             <th scope="col"></th>
+            <th scope="col"></th>
+
         </tr>
     </thead>
     <tbody>
@@ -27,6 +29,10 @@
             <td>@Product.Price SAR</td>
             <td><button type="button" class="btn btn-dark"><a style="color:white" href="/products/details/@Product.Id"> SHOW </a></button></td>
             <td><button type="button" class="btn btn-dark"><a style="color:white" href="/products/edit/@Product.Id"> Edit </a></button></td>
+            <td><form method="post" asp-action="Delete" asp-controller="Products" asp-route-id="@Product.Id">
+                    <input type="submit" class="btn btn-primary" value="Delete" />
+                </form>
+            </td>
 
         </tr>
         }

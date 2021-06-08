@@ -49,11 +49,18 @@ namespace CRUD_with_ASP.NET.Controllers
         //it will come from the form when it's submited. 
         //POST - /products/create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Id","Name","Description","Price")]ProductModel product)
         {
-            _db.Products.Add(product);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _db.Products.Add(product);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return  View(product);
+            
+            
         }
 
 
@@ -81,7 +88,15 @@ namespace CRUD_with_ASP.NET.Controllers
             return RedirectToAction("Index");  
         }
 
-
+        //POST - /products/delete/id
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var Product = _db.Products.ToList().FirstOrDefault(p => p.Id == id);
+            _db.Products.Remove(Product);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
 
 
