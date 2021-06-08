@@ -62,3 +62,5 @@
 /Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/obj/Debug/net5.0/Razor/Views/Products/Index.cshtml.g.cs
 /Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/obj/Debug/net5.0/Razor/Views/Products/Details.cshtml.g.cs
 /Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/obj/Debug/net5.0/Razor/Views/Products/_NotFound.cshtml.g.cs
+/Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/obj/Debug/net5.0/Razor/Views/Products/Create.cshtml.g.cs
+/Users/sami/Projects/CRUD_with_ASP.NET/CRUD_with_ASP.NET/obj/Debug/net5.0/Razor/Views/Products/Edit.cshtml.g.cs

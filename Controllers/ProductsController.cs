@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CRUD_with_ASP.NET.Data;
-
+using CRUD_with_ASP.NET.Models;
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CRUD_with_ASP.NET.Controllers
@@ -34,8 +34,56 @@ namespace CRUD_with_ASP.NET.Controllers
                 return View("_NotFound");
             }
             ViewData["Product"] = Product;
-            return View();
+            return View(Product);
 
         }
+
+
+
+        //GET: /products/create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        //it will come from the form when it's submited. 
+        //POST - /products/create
+        [HttpPost]
+        public IActionResult Create([Bind("Id","Name","Description","Price")]ProductModel product)
+        {
+            _db.Products.Add(product);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+        //GET - /products/edit/id
+        public IActionResult Edit(int? id)
+        {
+            var Product = _db.Products.ToList().Find(p => p.Id == id);
+            if (id == null || Product == null)
+            {
+                return View("_NotFound");
+            }
+            ViewData["Product"] = Product;
+            return View();
+        }
+
+
+
+        //POST - /products/edit/id
+        [HttpPost]
+        public IActionResult Edit(int id, [Bind("Id", "Name", "Description", "Price")] ProductModel product)
+        {
+            //var Product = _db.Products.ToList().Find(p => p.Id == id);
+            _db.Products.Update(product);
+            _db.SaveChanges();
+            return RedirectToAction("Index");  
+        }
+
+
+
+
+
     }
 }

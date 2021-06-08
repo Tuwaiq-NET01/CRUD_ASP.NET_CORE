@@ -14,20 +14,24 @@
             <th scope="col">Description</th>
             <th scope="col">Price</th>
             <th scope="col">Details</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var Product in Proudcts)
         {
-            <tr>
-                <th scope="row">@Product.Id</th>
-                <td>@Product.Name</td>
-                <td>@Product.Description</td>
-                <td>@Product.Price SAR</td>
-                <td><button type="button" class="btn btn-dark"><a style="color:white"href="/products/details/@Product.Id"> SHOW </a></button></td>
-            </tr>
+        <tr>
+            <th scope="row">@Product.Id</th>
+            <td>@Product.Name</td>
+            <td>@Product.Description</td>
+            <td>@Product.Price SAR</td>
+            <td><button type="button" class="btn btn-dark"><a style="color:white" href="/products/details/@Product.Id"> SHOW </a></button></td>
+            <td><button type="button" class="btn btn-dark"><a style="color:white" href="/products/edit/@Product.Id"> Edit </a></button></td>
+
+        </tr>
         }
 
 
     </tbody>
 </table>
+
